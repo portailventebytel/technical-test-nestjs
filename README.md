@@ -11,7 +11,7 @@ Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec S
    - `description` (string)
    - `createdAt` (timestamp, auto-généré)
 
-2. Lorsque vous accédez à la route `/products`, comment allez-vous gérer l'erreur `404` ?
+2. Si vous essayez d’accéder à la route /products, vous aurez une erreur 404, corrigez ce problème.
 
 3. Implémentez les opérations CRUD pour l'entité `Product` en utilisant une couche d'application distincte :
    - Récupérez un produit spécifique par son nom.
