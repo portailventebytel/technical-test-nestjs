@@ -2,21 +2,23 @@
 
 Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec SQLite comme base de données :
 
-1. Créez l'entité `Product` avec les attributs suivants :
-   - `id` (UUID auto-généré, clé primaire)
-   - `name` (string, requis, unique)
-   - `code` (string, requis, unique)
-   - `price` (number, requis)
-   - `quantity` (number, requis)
-   - `description` (string)
-   - `createdAt` (timestamp, auto-généré)
-
+1. Corrigez vous les erreurs de compilation
 2. Si vous essayez d’accéder à la route /products, vous aurez une erreur 404, corrigez ce problème.
 
 3. Implémentez les opérations CRUD pour l'entité `Product` en utilisant une couche d'application distincte :
+   ```typescript
+      class Product {
+         id: string
+         name: string
+         code: string
+         quantity: number
+         price: number
+         createdAt: DateTime
+      }
+   ````
    - Récupérez un produit spécifique par son nom.
    - Récupérez la liste de tous les produits, triés par nom par ordre croissant.
-   - Récupérez la liste de tous les produits sans doublons, en vous basant sur le code du produit.
+   - Donnez la possibilité de récupérer la liste de produits sans doublons en vous basant sur le code du produit.
    - Comment empêcherez-vous l'enregistrement des doublons pour les future POST /produits (en utilisant une fonctionnalité de `TypeORM`) ?
    > ⚠️ **À tout moment, si vous avez besoin de données, exécutez simplement la commande suivante : `npm run migration:run`**
 

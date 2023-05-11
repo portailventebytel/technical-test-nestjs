@@ -13,7 +13,7 @@ export class ProductController {
 
   @Get()
   async getAll(
-    @Query('without_duplicates') _without_duplicates: string,
+    @Query('without_duplicates') _without_duplicates?: string,
   ): Promise<Product[]> {
     return this.productService.findAll();
   }
