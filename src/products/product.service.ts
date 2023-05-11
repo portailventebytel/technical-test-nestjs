@@ -14,11 +14,13 @@ export class ProductService {
     return this.productRepository.save(product);
   }
 
-  async findOneByCode(code: string): Promise<Product> {
-    return this.productRepository.findOne({ where: { code } });
+  async findOneByName(_name: string): Promise<Product> {
+    // your code goes here
+    return;
   }
 
   async findAll(): Promise<Product[]> {
-    return this.productRepository.find();
+    // your code goes here
+    return [];
   }
 }
