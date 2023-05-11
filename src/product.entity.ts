@@ -1,19 +1,35 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Product {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column({ unique: true })
-  code: string;
+  @PrimaryGeneratedColumn('uuid')
+  id!: number;
 
   @Column()
   name: string;
 
   @Column()
-  price: string;
+  code: string;
 
-  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-  createdAt: Date;
+  @Column()
+  price: number;
+
+  @Column()
+  quantity: number;
+
+  @CreateDateColumn()
+  createdAt: string;
+
+  @UpdateDateColumn()
+  updtedAt: string;
+
+  /* @OneToMany(type => CartEntity, cart => cart.id)
+   @JoinColumn()
+   cart: CartEntity[] */
 }
