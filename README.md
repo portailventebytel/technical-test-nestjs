@@ -3,14 +3,11 @@
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/nestjs-typescript-starter-b6ttrj)
 
 
-**Test technique - Application e-commerce avec architecture hexagonale**
+**Test technique - Application e-commerce**
 
-Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec MariaDB comme base de données, en respectant l'architecture hexagonale :
+Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec sqlite comme base de données: 
 
-1. Mettez en place un nouveau projet NestJS avec MariaDB comme base de données.
-
-2. Créez une entité `Product` avec les attributs suivants :
-
+l'entité `Product` avec les attributs suivants :
    - `id` (auto-generated uuid, primary key)
    - `name` (string, required, unique)
    - `code` (string, required, unique)
@@ -18,16 +15,18 @@ Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec M
    - `quantity` (number, required)
    - `description` (string)
    - `createdAt` (timestamp, auto-generated)
+1. Tapez le path `/products` dans la navigation à droite, comment vous resolvez l'erreur `404`.  
 
-3. Implémentez les opérations CRUD (Create, Read, Update, Delete) pour l'entité `Product` en utilisant une couche d'application distincte :
+2. Implémentez les opérations CRUD pour l'entité `Product` en utilisant une couche d'application distincte :
 
-   - Créez un nouveau produit.
+   - Récupérez un produit spécifique par son nom 
    - Récupérez la liste de tous les produits, triés par nom par ordre croissant.
-   - Récupérez un produit spécifique par son ID.
-   - Mettez à jour un produit par son ID.
-   - Supprimez un produit par son ID.
+   - Récupérez la liste de tous les produits, sans les doublons en se basant sur le code de produit
+   - Comment evitez vous l'enregistrement des duplications pour les future post (en utilisant une functionalité `TypeORM`) 
+> ⚠️ **à tout moment si besoin des data faut juste que vous jouez la commande suivante: `npm run migration:run`**
+<br>
 
-4. Créez une entité `Order` avec les attributs suivants :
+2. Créez une entité `Order` avec les attributs suivants :
 
    - `id` (auto-generated uuid, primary key)
    - `customerName` (string, required)
@@ -35,20 +34,10 @@ Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec M
    - `products` (array of `Product` IDs, required)
    - `createdAt` (timestamp, auto-generated)
 
-5. Implémentez les opérations CRUD pour l'entité `Order` en utilisant une couche d'application distincte :
+3. Implémentez un service d'application pour le calcul du chiffre d'affaires total généré par l'ensemble des commandes.
 
-   - Créez une nouvelle commande avec la possibilité de sélectionner plusieurs produits et quantités.
-   - Récupérez la liste de toutes les commandes, y compris les détails des produits associés.
-   - Récupérez une commande spécifique par son ID, y compris les détails des produits associés.
-   - Mettez à jour une commande par son ID, y compris la possibilité d'ajouter ou de supprimer des produits et des quantités.
-   - Supprimez une commande par son ID.
+4. Implémentez un service d'application pour récupérer les 5 produits les plus vendus avec les quantités de vente les plus élevées.
 
-6. Implémentez un service d'application pour le calcul du chiffre d'affaires total généré par l'ensemble des commandes.
-
-7. Implémentez un service d'application pour récupérer les 5 produits les plus vendus avec les quantités de vente les plus élevées.
-
-8. Écrivez des tests unitaires pour les opérations CRUD implémentées, les services d'application de calcul du chiffre d'affaires et de récupération des meilleurs produits.
-
-9. Implémentez la pagination pour la liste des produits et des commandes, permettant au client de spécifier la taille de la page et de récupérer les résultats en conséquence.
+5. Écrivez des tests unitaires pour les opérations CRUD implémentées, les services d'application de calcul du chiffre d'affaires et de récupération des meilleurs produits.
 
 Si vous avez des questions ou avez besoin d'aide supplémentaire, n'hésitez pas à me le faire savoir.

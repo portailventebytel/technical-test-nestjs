@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product } from './product.entity';
 
@@ -12,7 +12,9 @@ export class ProductController {
   }
 
   @Get()
-  async getAll(): Promise<Product[]> {
+  async getAll(
+    @Query('without_duplicates') _without_duplicates: string,
+  ): Promise<Product[]> {
     return this.productService.findAll();
   }
 }
