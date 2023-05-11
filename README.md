@@ -13,7 +13,7 @@ Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec S
          code: string
          quantity: number
          price: number
-         createdAt: DateTime
+         createdAt: Date
       }
    ````
    - Récupérez un produit spécifique par son nom.
