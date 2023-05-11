@@ -2,7 +2,7 @@
 
 Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec SQLite comme base de données :
 
-1. Corrigez vous les erreurs de compilation
+1. Corrigez les erreurs de compilation
 2. Si vous essayez d’accéder à la route /products, vous aurez une erreur 404, corrigez ce problème.
 
 3. Implémentez les opérations CRUD pour l'entité `Product` en utilisant une couche d'application distincte :
