@@ -15,11 +15,11 @@ Veuillez réaliser les tâches suivantes en utilisant le framework NestJS avec S
          price: number
          createdAt: Date
       }
-   ````
+   ```
    - Récupérez un produit spécifique par son nom.
    - Récupérez la liste de tous les produits, triés par nom par ordre croissant.
    - Donnez la possibilité de récupérer la liste de produits sans doublons en vous basant sur le code du produit.
-   - Comment empêcherez-vous l'enregistrement des doublons pour les future POST /produits (en utilisant une fonctionnalité de `TypeORM`) ?
+   - Empêchez l’enregistrement des produits en double pour les futurs POST /produits (en utilisant une fonctionnalité de TypeORM)?
    > ⚠️ **À tout moment, si vous avez besoin de données, exécutez simplement la commande suivante : `npm run migration:run`**
 
 4. Créez l'entité `Order` avec les attributs suivants :
