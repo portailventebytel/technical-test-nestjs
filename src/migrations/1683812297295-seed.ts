@@ -1,10 +1,10 @@
-import { Product } from 'src/products/product.entity';
+import { Product } from '../products/product.entity';
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class Seed1683812297295 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.manager.save(
-      queryRunner.manager.create<Product>(Product, [
+      queryRunner.manager.create(Product, [
         {
           name: 'iphone15',
           code: 'AAAAAAAAA',
