@@ -14,7 +14,7 @@ export class Product {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ unique: true })
   code: string;
 
   @Column()

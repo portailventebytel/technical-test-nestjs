@@ -14,13 +14,20 @@ export class ProductService {
     return this.productRepository.save(product);
   }
 
-  async findOneByName(_name: string): Promise<Product> {
-    // your code goes here
+  async findOneByName(name: string): Promise<Product> {
+    if (name) {
+      return this.productRepository.findOne({ where: { name } });
+    }
     return;
   }
 
-  async findAll(): Promise<Product[]> {
-    // your code goes here
-    return [];
+  async findAll(without_duplicates?: string): Promise<Product[]> {
+    let products = await this.productRepository.find();
+    products = products.sort((a, b) => a.name?.localeCompare(b.name));
+
+    if (without_duplicates) {
+      return [...new Map(products.map((item) => [item.code, item])).values()];
+    }
+    return products;
   }
 }
