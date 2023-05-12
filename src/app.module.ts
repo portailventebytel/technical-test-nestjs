@@ -6,6 +6,7 @@ import { Product } from './products/product.entity';
 import { AppDataSource } from '../data-source';
 import { ProductService } from './products/product.service';
 import { AppService } from './app.service';
+import { ProductController } from './products/product.controller';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { AppService } from './app.service';
     }),
     TypeOrmModule.forFeature([Product]),
   ],
-  controllers: [AppController],
+  controllers: [AppController, ProductController],
   providers: [ProductService, AppService],
 })
 export class AppModule {}
